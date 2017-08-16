@@ -150,7 +150,7 @@ bool EsPrimo(int numero) {
 }
 
 int main() {
-	std::cout << "hola mundo" << std::endl;
+	std::cout << "Hello world" << std::endl;
 
 	int p = PerimetroRectangulo(5, 3);
 	std::cout << p << std::endl;
