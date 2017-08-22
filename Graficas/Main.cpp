@@ -3,190 +3,57 @@
 
 Materia:				Gráficas Computacionales
 
-Fecha:					15/08/2017
+Fecha:					22/08/2017
 
 Autor:					A01169892 Daphne Sánchez Flores
 
 *************************************************************/
 
 #include<iostream>
+#include "Circle.h"
+#include "Rectangle.h"
+#include "Employee.h"
+//#include <string>
 
-//Ejercicio 1
-int PerimetroRectangulo(int base, int altura) {
-	return 2 * (base + altura);
-}
-
-//Ejercicio 2
-float AreaTriangulo(float base, float altura) {
-	return (base * altura) / 2;
-}
-
-//Ejercicio 3
-int Mayor(int numero1, int numero2, int numero3) {
-	if (numero1 > numero2 && numero1 > numero3) {
-		return numero1; 
-	}
-	else if (numero1 > numero2 && numero1 < numero3) {
-		return numero3; 
-	}
-	else
-	{
-		if (numero1 < numero2 && numero2 < numero3) {
-			return numero3;
-		}
-		else
-			return numero2;
-	}
-}
-
-//Ejercicio 4
-int Menor(int numero1, int numero2, int numero3) {
-	if (numero1 < numero2 && numero1 < numero3) {
-		return numero1;
-	}
-	else if (numero1 < numero2 && numero1 > numero3) {
-		return numero3;
-	}
-	else
-	{
-		if (numero1 > numero2 && numero2 > numero3) {
-			return numero3;
-		}
-		else
-			return numero2;
-	}
-}
-
-//Ejercicio 5
-void FilaEstrellas(int n) {
-	int i = 0;
-	while (i < n) {
-		std::cout << "*";
-		i++;
-	}
-	std::cout << " " << std::endl;
-}
-
-//Ejercicio 6
-void MatrizEstrellas(int n) {
-	int i = 0;
-	for (int j=0; j<n ; j++){
-		i = 0;
-		while (i < n-1) {
-			std::cout << "*";
-			i++;
-		}
-		std::cout<< "*" << std::endl;
-	}
-}
-
-//Ejercicio 7
-void PiramideEstrellas(int n) {
-	int i = 0;
-	for (int j = 0; j<n; j++) {
-		i = 0;
-		while (i < j) {
-			std::cout << "*";
-			i++;
-		}
-		std::cout << "*" << std::endl;
-	}
-}
-
-//Ejercicio 8 
-//int i es cantidad en x <---->
-void FlechaEstrellas(int n) {
-	int i = 0;
-	for (int j = 0; j<n; j++) {
-		i = 0;
-		while (i < j) {
-			std::cout << "*";
-			i++;
-		}
-		std::cout << "*" << std::endl;
-	}
-
-	for (int j = 0; j < n-1; j++) {
-		int i = n-2;
-		while (i > j) {
-			std::cout << "*";
-			i--;
-		}
-		std::cout << "*" << std::endl;
-	}
-}
-
-//Ejercicio 9 
-void Fibonacci(int n) {
-	int a = 0;
-	int b = 1;
-	int c = a;
-	int i = 0;
-	while (i < n) {
-		std::cout << b << " ";
-		c = a + b;
-		a = b;
-		b = c;
-		i++;
-	}
-}
-
-//Ejercicio 10
-//x es la cantidad de divisores del ciclo, solo puede tener 2: 
-// 1 por sí mismo y otro por ser dividido entre 1
-bool EsPrimo(int numero) {
-	int x = 0;
-	for (int i = 1; i <= numero; i++) {
-		if (numero % i == 0) {
-			x++;
-		}
-	}
-	if (x == 2) {
-		return true;
-	}
-	else {
-		return false;
-	}
-}
 
 int main() {
 	std::cout << "Hello world" << std::endl;
 
-	int p = PerimetroRectangulo(5, 3);
-	std::cout << p << std::endl;
+	Circle killme;
 
-	float a = AreaTriangulo(5.0f, 3.0f);
-	std::cout << a << std::endl;
+	std::cout << killme.GetRadius() << std::endl;
+	std::cout << killme.GetColor() << std::endl;
+	killme.SetColor("orange");
+	std::cout << killme.GetColor() << std::endl;
 
-	int mayor = Mayor(5, 9, 1);
-	std::cout << mayor << std::endl;
 
-	int menor = Menor(5, 9, 1);
-	std::cout << menor << std::endl;
+//Actividad 3
+	std::cout << "Actividad 3" << std::endl;
+	Rectangle rectangulo;
 
-	FilaEstrellas(5);
-	std::cout << "   " << std::endl;
+	std::cout << "base = "; std::cout << rectangulo.GetWidth() << std::endl;
+	std::cout << "altura = "; std::cout << rectangulo.GetHeight() << std::endl;
+	std::cout << "area = "; std::cout << rectangulo.GetArea() << std::endl;
+	std::cout << "perimetro = "; std::cout << rectangulo.GetPerimeter() << std::endl;
 
-	MatrizEstrellas(4);
-	std::cout << "   " << std::endl;
+	std::cout << "nuevos datos" << std::endl;
 
-	PiramideEstrellas(6);
-	std::cout << "   " << std::endl;
+	rectangulo.SetWidth(4.0);
+	rectangulo.SetHeight(5.0);
 
-	FlechaEstrellas(3);
-	std::cout << "   " << std::endl;
+	std::cout << "base = "; std::cout << rectangulo.GetWidth() << std::endl;
+	std::cout << "altura = "; std::cout << rectangulo.GetHeight() << std::endl;
+	std::cout << "area = "; std::cout << rectangulo.GetArea() << std::endl;
+	std::cout << "perimetro = "; std::cout << rectangulo.GetPerimeter() << std::endl;
+	
 
-	Fibonacci(9);
-	std::cout << "   " << std::endl;
+//Actividad 4
+	Employee empleado(1169892, "Daphne", "Sanchez", 200);
+	std::cout << empleado.Print() << std::endl;
 
-	bool primo = EsPrimo(11);
-	if (primo == false) {
-		std::cout << "False" << std::endl;
-	}
-	else {
-		std::cout << "True" << std::endl;
-	}
-
+	empleado.SetSalary(400);
+	std::cout << "salario con porcentaje: " + std::to_string(empleado.RaiseSalary(50)) << std::endl;
+	std::cout << "salario anual: " + std::to_string(empleado.GetAnnualSalary()) << std::endl;
 	std::cin.get();
 	return 0;
 }
