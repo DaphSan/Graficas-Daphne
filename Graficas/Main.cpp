@@ -15,6 +15,7 @@ Autor:					A01169892 Daphne Sánchez Flores
 #include <glm/glm.hpp>
 #include <vector>
 #include "InputFile.h"
+#include "Mesh.h"
 
 // Identificador del manager de VBOs para un conjunto de vertices.
 GLuint vao;
