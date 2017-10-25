@@ -5,6 +5,7 @@
 #include <glm/glm.hpp>
 #include <vector>
 #include <memory>
+#include "Shader.h"
 
 class ShaderProgram
 {
@@ -23,9 +24,9 @@ public:
 	void Activate();
 	void Deactivate();
 	void SetAttribute(GLuint locationIndex, std::string name);
-	void setUniformf(std::string name, float value);
+	/*void setUniformf(std::string name, float value);
 	void setUniformf(std::string name, float x, float y);
 	void setUniformf(std::string name, float x, float y, float z);
 	void setUniformf(std::string name, float x, float y, float z, float w);
-
+	*/
 };

@@ -20,6 +20,7 @@ Mesh::~Mesh()
 	glDeleteVertexArrays(1, &_vertexArrayObject);
 	glDeleteBuffers(1, &_positionsVertexBufferObject);
 	glDeleteBuffers(1, &_colorsVertexBufferObject);
+	_vertexCount = 0;
 }
 
 void Mesh::CreateMesh(GLint vertexCount)
@@ -45,23 +46,23 @@ void Mesh::Draw(GLenum primitive)
 
 void Mesh::SetPositionAttribute(std::vector<glm::vec2> positions, GLenum usage, GLuint locationIndex)
 {
-	if (positions.size == _vertexCount && positions.size < 0 )
+	if (positions.size() > 0 && positions.size() ==_vertexCount)
 	{
-		SetAttributeData(_vertexArrayObject, sizeof(glm::vec2)*positions.size(), positions.data(), usage, locationIndex, 2);
+		SetAttributeData(_positionsVertexBufferObject, sizeof(glm::vec2)*positions.size(), positions.data(), usage, locationIndex, 2);
 	}
 }
 
 void Mesh::SetPositionAttribute(std::vector<glm::vec3> positions, GLenum usage, GLuint locationIndex)
 {
-	if (positions.size == _vertexCount && positions.size < 0)
+	if (positions.size() > 0 && positions.size() == _vertexCount)
 	{
-		SetAttributeData(_positionsVertexBufferObject, sizeof(glm::vec2)*positions.size(), positions.data(), usage, locationIndex, 3);
+		SetAttributeData(_positionsVertexBufferObject, sizeof(glm::vec3)*positions.size(), positions.data(), usage, locationIndex, 3);
 	}
 }
 
 void Mesh::SetColorAttribute(std::vector<glm::vec3> colors, GLenum usage, GLuint locationIndex)
 {
-	if (colors.size == _vertexCount && colors.size < 0)
+	if (colors.size() > 0 && colors.size() == _vertexCount)
 	{
 		SetAttributeData(_colorsVertexBufferObject, sizeof(glm::vec3)*colors.size(), colors.data(), usage, locationIndex, 3);
 	}
@@ -69,7 +70,7 @@ void Mesh::SetColorAttribute(std::vector<glm::vec3> colors, GLenum usage, GLuint
 
 void Mesh::SetColorAttribute(std::vector<glm::vec4> colors, GLenum usage, GLuint locationIndex)
 {
-	if (colors.size == _vertexCount && colors.size < 0)
+	if (colors.size() > 0 && colors.size() == _vertexCount)
 	{
 		SetAttributeData(_colorsVertexBufferObject, sizeof(glm::vec2)*colors.size(), colors.data(), usage, locationIndex, 4);
 	}
@@ -78,8 +79,9 @@ void Mesh::SetAttributeData(GLuint &buffer, const GLsizeiptr size, const void * 
 {
 	if (buffer != 0)
 	{
-		glDeleteBuffers(1, &buffer);
+		glDeleteBuffers(1, &buffer); //cuantos buffers y qué bbuffer quieres borrar
 	}
+	//glBindVertexArray(_vertexArrayObject);
 	else
 	{
 	glGenBuffers(1, &buffer);
@@ -88,5 +90,7 @@ void Mesh::SetAttributeData(GLuint &buffer, const GLsizeiptr size, const void * 
 	glEnableVertexAttribArray(locationIndex);
 	glVertexAttribPointer(locationIndex, components, GL_FLOAT, GL_FALSE, 0, nullptr);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	//y esto haha
+	glBindVertexArray(0);
 	}
 }
