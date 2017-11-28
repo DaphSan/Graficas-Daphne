@@ -13,12 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Archivos de código fuente\Shaders">
-      <UniqueIdentifier>{ff04410a-976d-4767-bd32-41943bedde52}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
     <ClCompile Include="InputFile.cpp">
@@ -33,27 +33,59 @@
     <ClCompile Include="ShaderProgram.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture2D.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
     <ClInclude Include="InputFile.h">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Mesh.h">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Shader.h">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="ShaderProgram.h">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture2D.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Default.vert">
-      <Filter>Archivos de código fuente\Shaders</Filter>
-    </None>
     <None Include="Default.frag">
-      <Filter>Archivos de código fuente\Shaders</Filter>
+      <Filter>Archivos de código fuente</Filter>
     </None>
+    <None Include="Default.vert">
+      <Filter>Archivos de código fuente</Filter>
+    </None>
+    <None Include="PhongShading.frag">
+      <Filter>Archivos de código fuente</Filter>
+    </None>
+    <None Include="PhongShading.vert">
+      <Filter>Archivos de código fuente</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Downloads\Fox.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="..\..\..\Downloads\BoxT.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="..\..\..\Pictures\referncia\metalbox.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
   </ItemGroup>
 </Project>

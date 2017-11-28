@@ -15,12 +15,12 @@ uniform mat4 modelMatrix;
 
 void main()
 {
-	mat3 NormalMatrix = normalize(transpose(inverse(mat3(modelMatrix))));
-	InterpolatedNormal = normalize(NormalMatrix * VertexNormal);
-	PixelPosition = normalize(vec3(modelMatrix * vec4(VertexPosition, 1.0f)));
-
-	InterpolatedTexCoord = VertexTexCoord;
+	mat3 NormalMatrix = transpose(inverse(mat3(modelMatrix)));
+	InterpolatedNormal = NormalMatrix * VertexNormal;
+	PixelPosition = vec3(modelMatrix * vec4(VertexPosition, 1.0f));
 
 	InterpolatedColor = VertexColor;
-	gl_Position = normalize(mvpMatrix * vec4(VertexPosition, 1.0f));
+	gl_Position = mvpMatrix * vec4(VertexPosition, 1.0f);
+
+	InterpolatedTexCoord=VertexTexCoord;
 }

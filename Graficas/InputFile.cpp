@@ -1,4 +1,5 @@
 #include "InputFile.h"
+#include <IL/il.h>
 
 #include <fstream>
 #include <iostream>

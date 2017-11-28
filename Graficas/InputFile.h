@@ -1,5 +1,7 @@
 #pragma once
+
 #include <string>
+#include <IL/il.h>
 
 class InputFile
 {

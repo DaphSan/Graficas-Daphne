@@ -18,6 +18,36 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="InputFile.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderProgram.cpp" />
+    <ClCompile Include="Texture2D.cpp" />
+    <ClCompile Include="Transform.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="InputFile.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShaderProgram.h" />
+    <ClInclude Include="Texture2D.h" />
+    <ClInclude Include="Transform.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Default.frag" />
+    <None Include="Default.vert" />
+    <None Include="PhongShading.frag" />
+    <None Include="PhongShading.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Downloads\BoxT.png" />
+    <Image Include="..\..\..\Downloads\Fox.png" />
+    <Image Include="..\..\..\Pictures\referncia\metalbox.jpg" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{B6D5B019-5581-4DCA-B7D5-047D2B4412A0}</ProjectGuid>
@@ -123,25 +153,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="InputFile.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Mesh.cpp" />
-    <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="ShaderProgram.cpp" />
-    <ClCompile Include="Transform.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="InputFile.h" />
-    <ClInclude Include="Mesh.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="ShaderProgram.h" />
-    <ClInclude Include="Transform.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Default.frag" />
-    <None Include="Default.vert" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
